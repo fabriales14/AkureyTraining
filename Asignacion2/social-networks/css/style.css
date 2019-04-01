@@ -1,0 +1,63 @@
+/*  Stylesheet for index.html 
+    All Rights Reserved
+    This software is proprietary information of
+    Intelligent Sense
+    Use is subject to license terms.
+    Filename: style.css
+*/
+
+center {
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 25px;
+}
+
+a { 
+  color: white; 
+  text-decoration: none;
+}
+
+.container {
+  margin: 50px;
+  padding: 25px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.column {
+  margin: 20px;
+  float: left;
+  width: 25%;
+  height: 250px;
+  padding: 20px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.facebook-col {
+  background-color: rgb(12,33,90);
+  font-family: 'Roboto', sans-serif;
+}
+
+.twitter-col {
+  background-color: rgb(35,105,163);  
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.instagram-col {
+  background-color: rgb(107,56,27);   
+  font-family: 'Times New Roman', Times, serif;  
+}
+
+.fab { margin-left: 110px; }
+
+.fab:hover{ color: lawngreen; }
+
+.fa-facebook-square { margin-top: 65px; }
+
+.fa-instagram { margin-top: 38px; }
+
