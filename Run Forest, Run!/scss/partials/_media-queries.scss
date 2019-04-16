@@ -66,7 +66,7 @@
    /* Styles */
 }
 
-@media only screen and (min-width: 360px){
+@media only screen and (min-width: 160px){
 
 /* ====================
     INTERMEDIATE: Menu
@@ -74,7 +74,6 @@
 
 
    header {
-    height: 7vh;
 
     .header__icon {
         position: absolute;
@@ -90,22 +89,25 @@
    }
 
    nav {
-        a { display: none}
+        a {
+            display: none;
+        }
    }
 
     .search {
         background-image: url(../images/banner-mobile.png);
         background-size: 100%;
         background-repeat: no-repeat;
-        height: 22vh;
+        height: 250px;
+        margin-top: -1%;
     }
 
     .container {
         width: 90%;
-        margin-left: 5%;
+        margin-left: 6%;
 
         .container__item {
-            margin-top: 5%;
+            margin-top: 6%;
         }
 
         .container__title {
@@ -122,10 +124,11 @@
             height: 44px;
             font-size: 18px;
             text-indent: 5%;
-            margin-top: 2%;
         }
 
         .container__button {
+            background: transparent;
+            border: transparent;
             margin-left: -65px;
             img {
                 margin-bottom: 4px;
@@ -137,7 +140,7 @@
             justify-content: space-around;
 
             .item__logo {
-                margin-left: 15%; 
+                margin-left: auto; 
             }
         }
 
@@ -196,7 +199,7 @@
         display: inline-block;
         margin-top: 10%;
         width: 100%;
-        height: 8vh;
+        height: 88px;
 
         p {
             text-indent: 5%;
@@ -222,45 +225,61 @@
 
 @media only screen and (min-width: 768px) {
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
+    .search{
+        background-image: url(../images/banner.png);
+        background-size: 100%;
+        background-position: right;
+        background-repeat: no-repeat;
+        margin-top: -1vh;
+        height: 34vh;
     }
 
-/* ============
-    WIDE: Menu
-   ============ */
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+         
+        .container__header {
+            position: absolute;
+            top: 20%;
+            width: 95%;
 
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-   .main {
-        article {
-                float: left;
-                width: 57%;
+            .container__title {
+                color: white;
+                font-size: 36px;
+                line-height: normal;
+                width: 50%;
             }
+        }
 
-        aside {
-                float: right;
-                width: 28%;
-            }
-   }
+        .container__item {
+            margin-right: 5%;
+        }
+
+    }  
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        margin-top: 2%;
+
+        .footer__header {
+            text-indent: 15%;
+            width: 25%;
+            margin-top: 2%;
+        }
+
+        .footer__text {
+            width: 25%;
+            margin-top: 2%;
+            margin-left: -28%;
+        }
+
+        .footer__link {
+            margin-top: 2%;
+            margin-right: 4%;
+        }
+    }
 }
 
 @media only screen and (min-width: 1140px) {
@@ -268,6 +287,93 @@
 /* ===============
     Maximal Width
    =============== */
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .header__logo {
+            height: 60px;
+            margin-top: 1%;
+        }
+
+        .header__icon {
+            display: none;
+        }
+
+        nav {
+            width: 35%;
+
+            .header__menu {
+                display: flex;
+                margin-top: 7%;
+
+                li{
+                    margin-right: 5%;
+                }
+            }
+
+            a {
+                display: inline;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            a:hover {
+                border-bottom: 5px solid #FFFFFF;
+            }
+       }
+    }
+
+   .search{
+        background-image: url(../images/banner.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 500px;
+        margin-top: 0;
+   }
+
+   .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 2%;
+
+        .container__header {
+            position: absolute;
+            top: 300px;
+
+            .container__title {
+                color: white;
+                font-size: 36px;
+                line-height: normal;
+                width: 80%;        
+            }
+        }
+
+        .container__input {
+            background: #FFFFFF;
+            border: 1px solid #8E8E8E;
+            box-sizing: border-box;
+            border-radius: 20px;
+            width: 46%;
+            height: 44px;
+            font-size: 18px;
+            text-indent: 5%;
+            margin-top: 2%;
+        }
+
+     
+   }
+
+   .footer {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+
+        .footer__text {
+            margin-left: -46%;
+        }
+        
+   }
 
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
