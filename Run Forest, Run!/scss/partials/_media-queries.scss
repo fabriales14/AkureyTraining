@@ -78,13 +78,12 @@
     .header__icon {
         position: absolute;
         right: 22px;
-        top: 1%;
+        top: 7px;
         color: white;
     }
 
     .header__logo {
-      margin: 1.5%;
-      margin-left: 4%;
+      margin-left: 10px;
     }
    }
 
@@ -165,7 +164,6 @@
 
 
             .item__info {
-                margin-top: auto;
                 margin-left: 3%;
                 font-size: 12px;
                 text-align: justify;
@@ -230,8 +228,7 @@
         background-size: 100%;
         background-position: right;
         background-repeat: no-repeat;
-        margin-top: -1vh;
-        height: 34vh;
+        height: 350px;
     }
 
     .container {
@@ -240,7 +237,7 @@
          
         .container__header {
             position: absolute;
-            top: 20%;
+            top: 200px;
             width: 95%;
 
             .container__title {
@@ -293,7 +290,7 @@
 
         .header__logo {
             height: 60px;
-            margin-top: 1%;
+            margin-top: 5px;
         }
 
         .header__icon {
@@ -301,11 +298,11 @@
         }
 
         nav {
-            width: 35%;
+            width: 400px;
 
             .header__menu {
                 display: flex;
-                margin-top: 7%;
+                margin-top: 25px;
 
                 li{
                     margin-right: 5%;
