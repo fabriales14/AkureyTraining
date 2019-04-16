@@ -7,8 +7,8 @@
 //
 
 // *
-// * Author:      kchaves@intelligentsense.com
-// * Date:        28/10/2013
+// * Author:      falvarado@akurey.com
+// * Date:        16/04/2019
 // * Description: Media queries partial. Add here all the media queries
 //                
 // 
@@ -73,25 +73,24 @@
    ==================== */
 
 
-   header {
-
-    .header__icon {
-        position: absolute;
-        right: 22px;
-        top: 7px;
-        color: white;
-    }
-
-    .header__logo {
-      margin-left: 10px;
-    }
-   }
-
-   nav {
-        a {
-            display: none;
+    .header {
+        &__icon {
+            position: absolute;
+            right: 22px;
+            top: 7px;
+            color: white;
         }
-   }
+
+        &__logo {
+            margin-left: 10px;
+        }
+
+        &__nav {
+            a {
+                display: none;
+            }
+        }
+    }
 
     .search {
         background-image: url(../images/banner-mobile.png);
@@ -104,89 +103,91 @@
     .container {
         width: 90%;
         margin-left: 6%;
-
-        .container__item {
-            margin-top: 6%;
-        }
-
-        .container__title {
-            font-size: 24px;
-            width: 80%;
-        }
-
-        .container__input {
-            background: #FFFFFF;
-            border: 1px solid #8E8E8E;
-            box-sizing: border-box;
-            border-radius: 20px;
-            width: 90%;
-            height: 44px;
-            font-size: 18px;
-            text-indent: 5%;
-        }
-
-        .container__button {
-            background: transparent;
-            border: transparent;
-            margin-left: -65px;
-            img {
-                margin-bottom: 4px;
+    
+        &__header {
+            
+            &__title {
+                font-size: 24px;
+                width: 80%;
             }
-        }
 
-        .item__header {
-            display: flex;
-            justify-content: space-around;
-
-            .item__logo {
-                margin-left: auto; 
-            }
-        }
-
-        .item__tittle {
-            font-size: 18px;
-        }
-
-        .item__line {
-            border: 1px solid #D8D8D8;
-        }
-
-        .item__section {
-            display: flex;
-            margin-top: 2%;
-
-            .item__img{
-                margin: inherit;
-                height: 135px;
-                border: 1px solid #D8D8D8;
+            &__input {
+                background: #FFFFFF;
+                border: 1px solid #8E8E8E;
                 box-sizing: border-box;
+                border-radius: 20px;
+                width: 90%;
+                height: 44px;
+                font-size: 18px;
+                text-indent: 5%;
             }
 
-
-            .item__info {
-                margin-left: 3%;
-                font-size: 12px;
-                text-align: justify;
-                line-height: normal;
-            }          
-        }
-
-        .item__footer {
-            display: flex;
-            font-size: 14px;
-            font-weight: bold;
-
-            .item__footer-button {
-                margin: auto;
-                width: 156px;
-                height: 34px;
-                background: black;
-                color: white;
-                background: #000000;
-                border-radius: 18px;
+            &__button {
+                background: transparent;
+                border: transparent;
+                margin-left: -65px;
+                img {
+                    margin-bottom: 4px;
+                }
             }
         }
 
+        &__item {
+            margin-top: 6%;
+
+            &__header {
+                display: flex;
+                justify-content: space-around;
+
+                &__tittle {
+                    font-size: 18px;
+                }
+    
+                &__logo {
+                    margin-left: auto; 
+                }
+            }
+
+            &__line {
+                border: 1px solid #D8D8D8;
+            }
+
+            &__section {
+                display: flex;
+                margin-top: 2%;
+    
+                &__img{
+                    margin: inherit;
+                    height: 135px;
+                    border: 1px solid #D8D8D8;
+                    box-sizing: border-box;
+                }
+    
+    
+                &__info {
+                    margin-left: 3%;
+                    font-size: 12px;
+                    text-align: justify;
+                    line-height: normal;
+                }          
+            }
+
+            &__footer {
+                display: flex;
+                font-size: 14px;
+                font-weight: bold;
+    
+                &__button {
+                    margin: auto;
+                    width: 156px;
+                    height: 34px;
+                    background: black;
+                    color: white;
+                    background: #000000;
+                    border-radius: 18px;
+                }
+            }
+        }
     }
 
     .footer {
@@ -203,11 +204,11 @@
             text-indent: 5%;
         }
 
-        .footer__text{
+        &__text{
             margin-top: -10px;
         }
 
-        .footer__link {
+        &__link {
             margin-left: 5%;
             
             a {
@@ -235,12 +236,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
          
-        .container__header {
+        &__header {
             position: absolute;
             top: 200px;
             width: 95%;
 
-            .container__title {
+            &__title--black {
                 color: white;
                 font-size: 36px;
                 line-height: normal;
@@ -248,7 +249,7 @@
             }
         }
 
-        .container__item {
+        &__item {
             margin-right: 5%;
         }
 
@@ -260,19 +261,19 @@
         height: 60px;
         margin-top: 2%;
 
-        .footer__header {
+        &__header {
             text-indent: 15%;
             width: 25%;
             margin-top: 2%;
         }
 
-        .footer__text {
+        &__text {
             width: 25%;
             margin-top: 2%;
             margin-left: -28%;
         }
 
-        .footer__link {
+        &__link {
             margin-top: 2%;
             margin-right: 4%;
         }
@@ -288,19 +289,19 @@
         display: flex;
         justify-content: space-between;
 
-        .header__logo {
+        &__logo {
             height: 60px;
             margin-top: 5px;
         }
 
-        .header__icon {
+        &__icon {
             display: none;
         }
 
-        nav {
+        &__nav {
             width: 400px;
 
-            .header__menu {
+            &__elements {
                 display: flex;
                 margin-top: 25px;
 
@@ -334,11 +335,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         margin-top: 2%;
 
-        .container__header {
+        &__header {
             position: absolute;
             top: 300px;
 
-            .container__title {
+            &__title {
                 color: white;
                 font-size: 36px;
                 line-height: normal;
@@ -346,7 +347,7 @@
             }
         }
 
-        .container__input {
+        &__input {
             background: #FFFFFF;
             border: 1px solid #8E8E8E;
             box-sizing: border-box;
@@ -366,7 +367,7 @@
         justify-content: space-between;
         height: 60px;
 
-        .footer__text {
+        &__text {
             margin-left: -46%;
         }
         
