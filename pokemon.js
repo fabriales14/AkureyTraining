@@ -7,7 +7,7 @@
  */
 
  /*
-  * Author:      falvarado@akurey.com
+  * Author:      falvarado@akurey.com / Fabricio Alvarado Esquivel
   * Date:        22/04/2019
   * Description: Pokemon damage assignment, using JavaScript.
   */
