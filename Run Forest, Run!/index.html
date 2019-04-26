@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+    All Rights Reserved
+    This software is proprietary information of
+    Intelligent Sense
+    Use is subject to license terms.
+    Filename: index.html
+    Author: falvarado@akurey.com
+-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Run Forest, Run!</title>
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+    <!-- build:remove -->
+    <span id="browser-sync-binding"></span>
+    <!-- endbuild -->
+    <header class="header">
+        <img class="header__logo" src="images/logo.png">
+        <a class="header__icon"><i class="fas fa-bars fa-3x"></i></a>
+        <nav class="header__nav">
+            <ul class="header__nav__elements">
+                <li><a href="#">Directorio de Agentes</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Ingresar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search">
+    </div>
+
+    <div id="box" class="container">
+        <div class="container__header">
+            <h1 class="container__header__title container__header__title--black">Los Mejores agentes de seguridad</h1>
+            <input class="container__header__input" type="search" placeholder="Buscar por Ubicación">
+            <button class="container__header__button"><img src="images/search.png"></button>
+        </div>
+
+        <script type="mustache/x-tmpl" id="chuckTmpl">
+            {{#list}}
+                <article class="container__item">
+                    <div class="container__item__header">
+                        <h1 class="container__item__header__tittle">{{title}}</h1>
+                        <img class="container__item__header__logo" src="images/certified.png">
+                    </div>
+                    <div class="container__item__line"></div>
+                    <section class="container__item__section">
+                        <img class="container__item__section__img" src="images/chuck.jpg">
+                        <p class="container__item__section__info">{{info}}</p>
+                    </section>
+                    <footer class="container__item__footer">
+                        <p class="container__item__footer__tittle">{{price}}</p>
+                        <button class="container__item__footer__button">Contratar</button>
+                    </footer>
+                </article>
+            {{/list}}
+        </script>
+
+        <script>
+            var obj = {
+                    title: "Chuck Norris Bodyguards",
+                    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend \
+                       vel enim ac lacinia. Phasellus ac nisl id velit tristique accumsan nec at enim. Etiam\
+                       posuere tell us ut ligula feugiat auctor. Morbi ut quam aliquet, viverra purus in,\
+                       convallis ante.",
+                    price: "Desde: $15 / 12 horas"
+                }
+            var data ={list: []};
+            while (data.list.length < 6){
+                data.list.push(obj);
+            }
+            var tmpl = document.getElementById("chuckTmpl").innerHTML;
+            var html = Mustache.to_html(tmpl, data);
+            var box = document.getElementById("box");
+            box.innerHTML = html;
+        </script>
+    </div>
+
+    <footer class="footer">
+        <p class="footer__header">Desarrollado por Akurey.com</p>
+        <p class="footer__text">Todos los derechos reservados.</p>
+        <div class="footer__link">
+            <a href="">Términos y Condiciones</a>
+        </div>
+    </footer>
+
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Live reload option. Remove in production environments -->
+    <!-- <script src="//localhost:35729/livereload.js"></script>-->
+</body>
+
+</html>
