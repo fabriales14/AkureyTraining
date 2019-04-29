@@ -132,62 +132,65 @@
             }
         }
 
-        &__item {
-            margin-top: 6%;
-
-            &__header {
-                display: flex;
-                justify-content: space-around;
-
-                &__title {
-                    font-size: 18px;
+        &__body {
+            &__item {
+                margin-top: 6%;
+        
+                &__header {
+                    display: flex;
+                    justify-content: space-around;
+        
+                    &__title {
+                        font-size: 18px;
+                    }
+            
+                    &__logo {
+                        margin-left: auto; 
+                    }
                 }
-    
-                &__logo {
-                    margin-left: auto; 
-                }
-            }
-
-            &__line {
-                border: 1px solid #D8D8D8;
-            }
-
-            &__section {
-                display: flex;
-                margin-top: 2%;
-    
-                &__img{
-                    margin: inherit;
-                    height: 135px;
+        
+                &__line {
                     border: 1px solid #D8D8D8;
-                    box-sizing: border-box;
                 }
-    
-    
-                &__info {
-                    margin-left: 3%;
-                    font-size: 12px;
-                    text-align: justify;
-                    line-height: normal;
-                }          
-            }
-
-            &__footer {
-                display: flex;
-                font-size: 14px;
-                font-weight: bold;
-    
-                &__button {
-                    margin: auto;
-                    width: 156px;
-                    height: 34px;
-                    background: black;
-                    color: white;
-                    background: #000000;
-                    border-radius: 18px;
+        
+                &__section {
+                    display: flex;
+                    margin-top: 2%;
+            
+                    &__img{
+                        margin: inherit;
+                        height: 135px;
+                        border: 1px solid #D8D8D8;
+                        box-sizing: border-box;
+                    }
+            
+                    &__info {
+                        margin-left: 3%;
+                        font-size: 12px;
+                        text-align: justify;
+                        line-height: normal;
+                    }          
                 }
-            }
+        
+                &__footer {
+                    display: flex;
+                    font-size: 14px;
+                    font-weight: bold;
+            
+                    &__button {
+                        margin: auto;
+                        width: 156px;
+                        height: 34px;
+                        background: black;
+                        color: white;
+                        background: #000000;
+                        border-radius: 18px;
+                    }
+                }
+            } 
         }
+
+        
     }
 
     .footer {
@@ -233,8 +236,6 @@
     }
 
     .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
          
         &__header {
             position: absolute;
@@ -249,8 +250,12 @@
             }
         }
 
-        &__item {
-            margin-right: 5%;
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            &__item {
+                margin-right: 5%;
+            }
         }
 
     }  
@@ -331,9 +336,6 @@
    }
 
    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin-top: 2%;
 
         &__header {
             position: absolute;
@@ -356,6 +358,12 @@
             height: 44px;
             font-size: 18px;
             text-indent: 5%;
+            margin-top: 2%;
+        }
+
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             margin-top: 2%;
         }
 
