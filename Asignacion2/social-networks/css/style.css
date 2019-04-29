@@ -11,11 +11,6 @@
  * Description: Stylesheet for index.html, social networks assignment.
  */
 
-center {
-  font-family: Arial, Helvetica, sans-serif; 
-  font-size: 25px;
-}
-
 a { 
   color: white; 
   text-decoration: none;
@@ -26,6 +21,11 @@ a {
   border-width: 2px;
   padding: 25px;
   border-style: solid;
+}
+
+.header {
+  font-family: Arial, Helvetica, sans-serif; 
+  text-align: center;
 
 }
 
