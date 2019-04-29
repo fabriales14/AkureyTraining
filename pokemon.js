@@ -13,56 +13,48 @@
   */
 
 
+var rules = {
+    "fire" : {
+        "grass" : 2,
+        "water" : 0.5,
+        "electric" : 1
+    },
+    "water" : {
+        "fire" : 2,
+        "grass" : 0.5,
+        "electric" : 0.5
+    },
+    "grass" : {
+        "fire" : 0.5,
+        "electric" : 1
+    },
+    "electric" : {
+        "grass" : 1,
+        "water" : 2,
+        "fire" : 1
+    }
+}
+
 /**
 * Initializes the module pokemon.
 * @public
 */
-function Pokemon(pName, pTipe, pAttack, pDefense){
+function Pokemon(pName, pType, pAttack, pDefense){
     this.name = pName;
-    this.tipe = pTipe;
+    this.type = pType;
     this.attack = pAttack;
     this.defense = pDefense;
-
-    /**
-     * This function returns the effectiveness of the damage,
-     * based on the pokemon's attack type.
-     */ 
-    this.getEffectiveness = function(pTipe) {
-        if (pTipe == this.tipe)
-            return 0.5;
-        else {
-            if (pTipe == "fire"){
-                if (this.tipe == "grass")
-                    return 0.5;
-                else if (this.tipe == "electric")
-                    return 1;
-                else
-                    return 2;
-            } else if (pTipe == "grass") {
-                if (this.tipe == "fire")
-                    return 2;
-                else if (this.tipe == "electric")
-                    return 1;
-                else
-                    return 0.5;
-            } else {
-                if (this.tipe == "fire")
-                    return 0.5;
-                else if (this.tipe == "electric")
-                    return 2;
-                else
-                    return 2;
-            }
-        }
-    };
 }
 
 /**
  * Function damage declaration. 50 * (attack/defense) * effectiveness
  */ 
 var damage = function(pPokemon1, pPokemon2){
-    var effectiveness = pPokemon1.getEffectiveness(pPokemon2.tipe);
-
+    var effectiveness;
+    if (pPokemon1.type == pPokemon2.type)
+        effectiveness = 0.5;
+    else
+        effectiveness = rules[pPokemon1.type][pPokemon2.type];
     return Math.round(50 * (pPokemon1.attack / pPokemon2.defense) * effectiveness);
 }
 
