@@ -54,8 +54,8 @@
     <div class="container">
         <div class="container__header">
             <h1 class="container__header__title container__header__title--black">Los Mejores agentes de seguridad</h1>
-            <input class="container__header__input" type="search" placeholder="Buscar por Ubicación">
-            <button class="container__header__button"><img src="images/search.png"></button>
+            <input class="container__header__input" id="search_input" type="search" placeholder="Buscar por Ubicación" onkeypress="handler(event)">
+            <button class="container__header__button" onclick="filterCompanies()" ><img src="images/search.png"></button>
         </div>
 
         <div class="container__body" id="box">
@@ -81,6 +81,8 @@
         </div>
 
         <script>
+            var companiesList;
+            var tmpl = document.getElementById("chuckTmpl").innerHTML;
             var companiesJSON = new Promise(
                 function (resolve, reject) {
                     var xhhtp = new XMLHttpRequest();
@@ -95,13 +97,28 @@
             )
             var getCompanies = function () {
                 companiesJSON.then(function (companies) {
-                    var tmpl = document.getElementById("chuckTmpl").innerHTML;
+                    companiesList = JSON.parse(companies)
                     var html = Mustache.to_html(tmpl, JSON.parse(companies));
                     var box = document.getElementById("box");
                     box.innerHTML = html;
                 })
             }
             getCompanies();
+
+            function filterCompanies(){
+                pName = document.getElementById("search_input").value;
+                comp = { "companies": []};
+                comp.companies = companiesList.companies.filter( elem => elem.name.includes(pName));
+                var html = Mustache.to_html(tmpl, comp);
+                var box = document.getElementById("box");
+                box.innerHTML = html;
+            }
+
+            function handler(e){
+                if (e.keyCode === 13){
+                    filterCompanies();
+                }
+            }
         </script>
     </div>
 
