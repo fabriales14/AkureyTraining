@@ -64,7 +64,7 @@
                     <article class="container__body__item">
                         <div class="container__body__item__header">
                             <h1 class="container__body__item__header__title">{{name}}</h1>
-                            <img class="container__body__item__header__logo" src="images/certified.png">
+                            {{#isCertified}}<img class="container__body__item__header__logo" src="images/certified.png">{{/isCertified}}
                         </div>
                         <div class="container__body__item__line"></div>
                         <section class="container__body__item__section">
@@ -79,47 +79,6 @@
                 {{/companies}}
             </script>
         </div>
-
-        <script>
-            var companiesList;
-            var tmpl = document.getElementById("chuckTmpl").innerHTML;
-            var companiesJSON = new Promise(
-                function (resolve, reject) {
-                    var xhhtp = new XMLHttpRequest();
-                    xhhtp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            resolve(xhhtp.response);
-                        }
-                    };
-                    xhhtp.open("GET", "https://api.myjson.com/bins/uptto", true);
-                    xhhtp.send();
-                }
-            )
-            var getCompanies = function () {
-                companiesJSON.then(function (companies) {
-                    companiesList = JSON.parse(companies)
-                    var html = Mustache.to_html(tmpl, JSON.parse(companies));
-                    var box = document.getElementById("box");
-                    box.innerHTML = html;
-                })
-            }
-            getCompanies();
-
-            function filterCompanies(){
-                pName = document.getElementById("search_input").value;
-                comp = { "companies": []};
-                comp.companies = companiesList.companies.filter( elem => elem.name.includes(pName));
-                var html = Mustache.to_html(tmpl, comp);
-                var box = document.getElementById("box");
-                box.innerHTML = html;
-            }
-
-            function handler(e){
-                if (e.keyCode === 13){
-                    filterCompanies();
-                }
-            }
-        </script>
     </div>
 
     <footer class="footer">
@@ -132,6 +91,7 @@
 
     <script src="js/vendor/jquery-1.10.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/promises.js"></script>
 
     <!-- Live reload option. Remove in production environments -->
     <!-- <script src="//localhost:35729/livereload.js"></script>-->

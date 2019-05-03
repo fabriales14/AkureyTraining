@@ -321,11 +321,11 @@ body {
   /* line 139, ../scss/partials/_media-queries.scss */
   .container__body__item__header {
     display: flex;
-    justify-content: space-around;
   }
-  /* line 143, ../scss/partials/_media-queries.scss */
+  /* line 142, ../scss/partials/_media-queries.scss */
   .container__body__item__header__title {
     font-size: 18px;
+    text-indent: 6px;
   }
   /* line 147, ../scss/partials/_media-queries.scss */
   .container__body__item__header__logo {
