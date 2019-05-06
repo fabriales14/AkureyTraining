@@ -43,9 +43,9 @@ getCompanies();
 
 function filterCompanies() {
     pName = document.getElementById("search_input").value;
-    comp = { "companies": [] };
-    comp.companies = companiesList.companies.filter(elem => elem.name.toLowerCase().includes(pName));
-    var html = Mustache.to_html(tmpl, comp);
+    companiesListAux = { "companies": [] };
+    companiesListAux.companies = companiesList.companies.filter(elem => elem.name.toLowerCase().includes(pName.toLowerCase()));
+    var html = Mustache.to_html(tmpl, companiesListAux);
     var box = document.getElementById("box");
     box.innerHTML = html;
 }
