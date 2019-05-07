@@ -1,0 +1,28 @@
+<div class="search">
+</div>
+
+<div class="container">
+    <div class="container__header">
+        <h1 class="container__header__title container__header__title--black">Los Mejores agentes de seguridad</h1>
+        <input class="container__header__input" [(ngModel)]="searchName.name" (ngModelChange)="checkLength($event)" type="search"  placeholder="Buscar por Ubicación">
+        <button class="container__header__button"><img src="../../assets/images/search.png"></button>
+    </div>
+
+    <div class="container__body" id="box" *ngIf="companies$">
+        <article class="container__body__item" *ngFor="let company of companies$.companies | filterBy: searchName ">
+            <div class="container__body__item__header">
+                <h1 class="container__body__item__header__title">{{company.name}}</h1>
+                <img *ngIf="company.isCertified" class="container__body__item__header__logo" src="../../assets/images/certified.png">
+            </div>
+            <div class="container__body__item__line"></div>
+            <section class="container__body__item__section">
+                <img class="container__body__item__section__img" src="../../assets/images/chuck.jpg">
+                <p class="container__body__item__section__info">{{company.description}}</p>
+            </section>
+            <footer class="container__body__item__footer">
+                <p class="container__body__item__footer__tittle">Desde ${{company.rate}} {{company.hours}}/hrs</p>
+                <button class="container__body__item__footer__button">Contratar</button>
+            </footer>
+        </article>
+    </div>
+</div>
