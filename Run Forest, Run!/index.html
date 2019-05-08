@@ -51,51 +51,34 @@
     <div class="search">
     </div>
 
-    <div id="box" class="container">
+    <div class="container">
         <div class="container__header">
             <h1 class="container__header__title container__header__title--black">Los Mejores agentes de seguridad</h1>
-            <input class="container__header__input" type="search" placeholder="Buscar por Ubicación">
-            <button class="container__header__button"><img src="images/search.png"></button>
+            <input class="container__header__input" id="search_input" type="search" placeholder="Buscar por Ubicación" onkeypress="handler(event)">
+            <button class="container__header__button" onclick="filterCompanies()" ><img src="images/search.png"></button>
         </div>
 
-        <script type="mustache/x-tmpl" id="chuckTmpl">
-            {{#list}}
-                <article class="container__item">
-                    <div class="container__item__header">
-                        <h1 class="container__item__header__title">{{title}}</h1>
-                        <img class="container__item__header__logo" src="images/certified.png">
-                    </div>
-                    <div class="container__item__line"></div>
-                    <section class="container__item__section">
-                        <img class="container__item__section__img" src="images/chuck.jpg">
-                        <p class="container__item__section__info">{{info}}</p>
-                    </section>
-                    <footer class="container__item__footer">
-                        <p class="container__item__footer__tittle">{{price}}</p>
-                        <button class="container__item__footer__button">Contratar</button>
-                    </footer>
-                </article>
-            {{/list}}
-        </script>
-
-        <script>
-            var obj = {
-                    title: "Chuck Norris Bodyguards",
-                    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend \
-                       vel enim ac lacinia. Phasellus ac nisl id velit tristique accumsan nec at enim. Etiam\
-                       posuere tell us ut ligula feugiat auctor. Morbi ut quam aliquet, viverra purus in,\
-                       convallis ante.",
-                    price: "Desde: $15 / 12 horas"
-                }
-            var data ={list: []};
-            while (data.list.length < 6){
-                data.list.push(obj);
-            }
-            var tmpl = document.getElementById("chuckTmpl").innerHTML;
-            var html = Mustache.to_html(tmpl, data);
-            var box = document.getElementById("box");
-            box.innerHTML = html;
-        </script>
+        <div class="container__body" id="box">
+            <script type="mustache/x-tmpl" id="chuckTmpl">
+                {{#companies}}
+                    <article class="container__body__item">
+                        <div class="container__body__item__header">
+                            <h1 class="container__body__item__header__title">{{name}}</h1>
+                            {{#isCertified}}<img class="container__body__item__header__logo" src="images/certified.png">{{/isCertified}}
+                        </div>
+                        <div class="container__body__item__line"></div>
+                        <section class="container__body__item__section">
+                            <img class="container__body__item__section__img" src="images/chuck.jpg">
+                            <p class="container__body__item__section__info">{{description}}</p>
+                        </section>
+                        <footer class="container__body__item__footer">
+                            <p class="container__body__item__footer__tittle">Desde ${{rate}} {{hours}}/hrs</p>
+                            <button class="container__body__item__footer__button">Contratar</button>
+                        </footer>
+                    </article>
+                {{/companies}}
+            </script>
+        </div>
     </div>
 
     <footer class="footer">
@@ -108,6 +91,7 @@
 
     <script src="js/vendor/jquery-1.10.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/promises.js"></script>
 
     <!-- Live reload option. Remove in production environments -->
     <!-- <script src="//localhost:35729/livereload.js"></script>-->
