@@ -7,7 +7,6 @@
         <input class="container__header__input" [(ngModel)]="searchName.name" (ngModelChange)="checkLength($event)" type="search"  placeholder="Buscar por Ubicación">
         <button class="container__header__button"><img src="../../assets/images/search.png"></button>
     </div>
-
     <div class="container__body" id="box" *ngIf="companies$">
         <article class="container__body__item" *ngFor="let company of companies$.companies | filterBy: searchName ">
             <div class="container__body__item__header">

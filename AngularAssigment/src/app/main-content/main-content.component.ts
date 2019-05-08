@@ -25,9 +25,9 @@ export class MainContentComponent implements OnInit {
 
   checkLength(e){
     if (e.length > 2)
-      this.searchName.name = String(e)
+      this.searchName.name = String(e);
     else 
-      this.searchName.name = ''
+      this.searchName.name = '';
   }
 
   
