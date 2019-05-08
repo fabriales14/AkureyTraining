@@ -39,8 +39,6 @@ var getCompanies = function () {
     })
 }
 
-getCompanies();
-
 function filterCompanies() {
     pName = document.getElementById("search_input").value;
     companiesListAux = { "companies": [] };
@@ -55,3 +53,5 @@ function handler(e) {
         filterCompanies();
     }
 }
+
+window.onload = getCompanies;
