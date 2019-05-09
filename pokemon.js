@@ -14,21 +14,21 @@
 
 
 var rules = {
-    "fire" : {
+    fire : {
         "grass" : 2,
         "water" : 0.5,
         "electric" : 1
     },
-    "water" : {
+    water : {
         "fire" : 2,
         "grass" : 0.5,
         "electric" : 0.5
     },
-    "grass" : {
+    grass : {
         "fire" : 0.5,
         "electric" : 1
     },
-    "electric" : {
+    electric : {
         "grass" : 1,
         "water" : 2,
         "fire" : 1
@@ -51,8 +51,9 @@ function Pokemon(pName, pType, pAttack, pDefense){
  */ 
 var damage = function(pPokemon1, pPokemon2){
     var effectiveness;
+    const equalType = 0.5;
     if (pPokemon1.type == pPokemon2.type)
-        effectiveness = 0.5;
+        ffectiveness = equalType;
     else
         effectiveness = rules[pPokemon1.type][pPokemon2.type];
     return Math.round(50 * (pPokemon1.attack / pPokemon2.defense) * effectiveness);
