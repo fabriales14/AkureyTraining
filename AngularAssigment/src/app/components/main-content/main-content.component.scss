@@ -1,0 +1,180 @@
+@media only screen and (min-width: 160px){
+    .search {
+        background-image: url(../../../assets/images/banner-mobile.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 250px;
+        margin-top: -1%;
+    }
+
+    .container {
+        width: 90%;
+        margin-left: 6%;
+    
+        &__header {
+            
+            &__title {
+                font-size: 24px;
+                width: 80%;
+            }
+
+            &__input {
+                background: #FFFFFF;
+                border: 1px solid #8E8E8E;
+                box-sizing: border-box;
+                border-radius: 20px;
+                width: 90%;
+                height: 44px;
+                font-size: 18px;
+                text-indent: 5%;
+            }
+
+            &__button {
+                background: transparent;
+                border: transparent;
+                margin-left: -65px;
+                img {
+                    margin-bottom: -13px;
+                }
+            }
+        }
+
+        &__body {
+            &__item {
+                margin-top: 6%;
+        
+                &__header {
+                    display: flex;
+        
+                    &__title {
+                        font-size: 18px;
+                        text-indent: 6px;
+                    }
+            
+                    &__logo {
+                        margin-left: auto; 
+                    }
+                }
+        
+                &__line {
+                    border: 1px solid #D8D8D8;
+                }
+        
+                &__section {
+                    display: flex;
+                    margin-top: 2%;
+            
+                    &__img{
+                        margin: inherit;
+                        height: 135px;
+                        border: 1px solid #D8D8D8;
+                        box-sizing: border-box;
+                    }
+            
+                    &__info {
+                        margin-left: 3%;
+                        font-size: 12px;
+                        text-align: justify;
+                        line-height: normal;
+                    }          
+                }
+        
+                &__footer {
+                    display: flex;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-indent: 10px;
+            
+                    &__button {
+                        margin: auto;
+                        width: 156px;
+                        height: 34px;
+                        background: black;
+                        color: white;
+                        background: #000000;
+                        border-radius: 18px;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .search{
+        background-image: url(../../../assets/images/banner.png);
+        background-size: 100%;
+        background-position: right;
+        background-repeat: no-repeat;
+        height: 350px;
+    }
+
+    .container {
+         
+        &__header {
+            position: absolute;
+            top: 200px;
+            width: 95%;
+
+            &__title--black {
+                color: white;
+                font-size: 36px;
+                line-height: normal;
+                width: 50%;
+            }
+        }
+
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            &__item {
+                margin-right: 5%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1140px) { 
+    .search{
+        background-image: url(../../../assets/images/banner.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 500px;
+        margin-top: 0;
+   }
+
+   .container {
+
+        &__header {
+            position: absolute;
+            top: 300px;
+
+            &__title {
+                color: white;
+                font-size: 36px;
+                line-height: normal;
+                width: 80%;        
+            }
+        }
+
+        &__input {
+            background: #FFFFFF;
+            border: 1px solid #8E8E8E;
+            box-sizing: border-box;
+            border-radius: 20px;
+            width: 46%;
+            height: 44px;
+            font-size: 18px;
+            text-indent: 5%;
+            margin-top: 2%;
+        }
+
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 2%;
+        }
+
+     
+   }
+}
