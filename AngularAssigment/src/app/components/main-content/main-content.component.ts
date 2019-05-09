@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
-import { FilterPipe } from 'ngx-filter-pipe';
+import { DataService } from '../../services/data-service/data.service';
+import { Company } from 'src/app/models/company.model';
+import { Companies } from 'src/app/models/companies';
 
 @Component({
   selector: 'app-main-content',
@@ -10,26 +10,31 @@ import { FilterPipe } from 'ngx-filter-pipe';
 })
 export class MainContentComponent implements OnInit {
 
-  companies$: Object;
+  companies: Companies;
   searchName: any = {name: ''};
 
-  constructor(private data: DataService, private filter: FilterPipe) { 
+  constructor(private data: DataService) { 
 
   }
 
   ngOnInit() {
     this.data.getCompanies().subscribe(
-      data => this.companies$ = data
+      data => {
+        this.companies = data as Companies;
+      }
     )
   }
 
+  
+  /**
+   * Checks length of input value and 
+   * @param {event} e
+   */
   checkLength(e){
     if (e.length > 2)
       this.searchName.name = String(e);
     else 
       this.searchName.name = '';
   }
-
   
-
 }
