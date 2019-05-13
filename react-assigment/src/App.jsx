@@ -2,20 +2,18 @@ import React from 'react';
 import './App.scss';
 import logo from './assets/images/logo.png'
 
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import MainContent from './components/MainContent/MainContent';
+
 class App extends React.Component {
   render() {
     return (
-      <header className="header">
-        <img className="header__logo" alt="" src={logo}></img>
-        <a className="header__icon"><i className="fas fa-bars fa-3x"></i></a>
-        <nav className="header__nav">
-          <ul className="header__nav__elements">
-            <li><a href="#">Directorio de Agentes</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Ingresar</a></li>
-          </ul>
-        </nav>
-      </header>
+      <div>
+        <Header/>
+        <MainContent/>
+        <Footer/>
+      </div>
     );
   } 
 }
