@@ -1,8 +1,7 @@
 import React from 'react';
 import './MainContent.scss';
-import CompanyService  from '../../services/companies';
-import certified from '../../assets/images/certified.png';
-import agentImg from '../../assets/images/chuck.jpg';
+import CompanyService  from '../../services/companies-service';
+import Card from '../Card/Card';
 
 class MainContent extends React.Component {
   constructor(props) {
@@ -42,21 +41,7 @@ class MainContent extends React.Component {
 
   render() {
     const companies = this.state.companies.filter(company => company.name.toLowerCase().includes(this.state.filter)).map ( company => (
-      <article className="container__body__item">
-          <div className="container__body__item__header">
-              <h1 className="container__body__item__header__title">{company.name}</h1>
-              { company.isCertified ? <img className="container__body__item__header__logo" src={certified}/> : null }
-          </div>
-          <div className="container__body__item__line"></div>
-          <section className="container__body__item__section">
-              <img className="container__body__item__section__img" src={agentImg}/>
-              <p className="container__body__item__section__info">{company.description}</p>
-          </section>
-          <footer className="container__body__item__footer">
-              <p className="container__body__item__footer__tittle">Desde ${company.rate} {company.hours}/hrs</p>
-              <button className="container__body__item__footer__button">Contratar</button>
-          </footer>
-      </article>
+      <Card name={company.name} isCertified={company.isCertified} description={company.description} rate={company.rate} hours={company.hours}/>
     ))
     return (
       <div>
