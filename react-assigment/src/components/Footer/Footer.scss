@@ -1,0 +1,82 @@
+.footer {
+    position: absolute;
+    bottom: 0%;
+    background: black;
+
+    footer {
+        color: white;
+        padding: 20px 0;
+    }
+    
+}
+
+@media only screen and (min-width: 160px){
+    .footer {
+        position: initial;
+        color: white;
+        //Review 
+        font-size: 12px;
+        line-height: normal;
+        display: inline-block;
+        margin-top: 10%;
+        width: 100%;
+        height: 88px;
+
+        p {
+            text-indent: 5%;
+        }
+
+        &__text{
+            //Review
+            margin-top: -10px;
+        }
+
+        &__link {
+            margin-left: 5%;
+            
+            a {
+                color: white;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        margin-top: 2%;
+
+        &__header {
+            text-indent: 15%;
+            width: 25%;
+            margin-top: 2%;
+        }
+
+        &__text {
+            width: 25%;
+            margin-top: 2%;
+            // Review
+            margin-left: -28%;
+        }
+
+        &__link {
+            margin-top: 2%;
+            margin-right: 4%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+
+        &__text {
+            margin-left: -46%;
+        } 
+   }
+}
